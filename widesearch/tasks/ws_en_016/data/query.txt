@@ -1,0 +1,17 @@
+Michael Phelps is one of the most decorated Olympians in history. 
+I am interested in compiling his medal achievements of individual events from major international competitions, specifically the Olympic Games, and the World Aquatics Championships.
+
+Please provide this information covering the period from 2000 to 2016 (including 2000 and 2016) for the competitions in which he has won gold, silver, and bronze medals, point out his standing in the competition as well as the specific individual's name who received each of those medals. Please also include the date (mm-dd-yy) and location of the final , the name of the swimming meet and event, and the record time of Michael Phelps.
+
+Please organize the results in one Markdown table with the following columns:
+Date, Location, Meet, Event, Time, Standing, Gold, Silver, Bronze
+Notes:
+Please include the city that held the final competition under Location, in the format of "City, country", for example: Beijing, China. 
+If multiple people get the same ranking, please separate their names with commas. In the Standing column, select 1, 2 or 3 according to the information you have found.
+Time is accurate to 1/100 second. Output format example: 1:23.01
+Write the full name or abbreviation of the event, for example, 200m butterfly or 200m fly.
+If there is content that cannot be found, use "-" instead.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

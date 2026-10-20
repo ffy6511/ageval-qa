@@ -1,0 +1,141 @@
+{
+  "unique_columns": [
+    "releasedate"
+  ],
+  "required": [
+    "modelname",
+    "releasedate",
+    "pre-installedos",
+    "processorbrand",
+    "cpumodel",
+    "cpumanufacturingprocess",
+    "cpucorecount",
+    "screensize",
+    "resolution",
+    "batterycapacity",
+    "ramsize",
+    "storagesize",
+    "highestcameraresolution",
+    "launchprice(usd)"
+  ],
+  "eval_pipeline": {
+    "releasedate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "processorbrand": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "cpumanufacturingprocess": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "cpucorecount": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "batterycapacity": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "ramsize": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "storagesize": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "highestcameraresolution": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "launchprice(usd)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "screensize": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "resolution": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "modelname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\nDo not need to be entirely strictly consistent"
+    },
+    "cpumodel": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\njust provide the core part, 'for Samsung' is optional.\nResolution：Reguard 2340x1080 and 1080x2340 both with equal and correct"
+    },
+    "pre-installedos": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

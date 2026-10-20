@@ -1,0 +1,47 @@
+{
+  "unique_columns": [
+    "景区名称"
+  ],
+  "required": [
+    "景区名称",
+    "所在省份",
+    "所在省份旅游接待人次（亿）",
+    "所在的省份的旅游综合收入（亿）"
+  ],
+  "eval_pipeline": {
+    "景区名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "所在省份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "所在省份旅游接待人次（亿）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "所在的省份的旅游综合收入（亿）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    }
+  }
+}

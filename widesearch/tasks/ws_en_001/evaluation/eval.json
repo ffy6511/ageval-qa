@@ -1,0 +1,84 @@
+{
+  "unique_columns": [
+    "subject",
+    "university"
+  ],
+  "required": [
+    "subject",
+    "university",
+    "qsworlduniversityrankingsbysubject2025",
+    "qsworlduniversityrankings2025",
+    "timeshighereducationworlduniversityrankings2025",
+    "homepage",
+    "applicationdeadline",
+    "applicationfee"
+  ],
+  "eval_pipeline": {
+    "applicationdeadline": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\nThe month and day must be correct"
+    },
+    "applicationfee": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\nIf there are multiple fees in the reference answer, all must be included."
+    },
+    "homepage": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "url_match"
+      ]
+    },
+    "subject": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "university": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "qsworlduniversityrankingsbysubject2025": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "qsworlduniversityrankings2025": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "timeshighereducationworlduniversityrankings2025": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

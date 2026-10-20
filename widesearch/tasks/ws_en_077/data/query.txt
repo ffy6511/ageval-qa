@@ -1,0 +1,10 @@
+How many changes occurred among cabinet secretaries and cabinet-level officials during Trump's first term, such as those who left their positions voluntarily or involuntarily before the term ended? What were the start and end dates of these officials, and who were their successors (note: changes of acting ministers are not included, and successors should be official appointees rather than acting ministers; if there was no official successor during Trump's first term, please indicate "-").
+
+Please present the organized data in Markdown table format.
+ The column headers should be, in order:
+Name, Position, Start Date, End Date, Successor.
+Please use the YYYY-MM-DD format for Start Date, End Date, for example: 2015-01-01
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

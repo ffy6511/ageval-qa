@@ -1,0 +1,98 @@
+{
+  "unique_columns": [
+    "modelname"
+  ],
+  "required": [
+    "modelname",
+    "price(launchmsrpsinusd)",
+    "dimensionsl/w/h(mm)",
+    "wheelbase(mm)",
+    "maxtorque(n·m)",
+    "frontsuspension",
+    "rearsuspension",
+    "advanced-driver-assistsystems(adas²)",
+    "intelligentparkingassist"
+  ],
+  "eval_pipeline": {
+    "maxtorque(n·m)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "frontsuspension": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "rearsuspension": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "advanced-driver-assistsystems(adas²)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "intelligentparkingassist": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "price(launchmsrpsinusd)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\nResponses must correspond to answer one by one.\nDimensions L/W/H (mm)：Responses must correspond to answer one by one. It is sufficient if the numerical values are approximately equal.\nWheelbase (mm)：Responses must correspond to answer one by one.\nAdvanced-Driver-Assist Systems (ADAS²)：Responses must correspond to answer one by one. Response mult list all ADAS equipped.\nFront Suspension：Responses must correspond to answer one by one.\nRear Suspension：Responses must correspond to answer one by one."
+    },
+    "dimensionsl/w/h(mm)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "wheelbase(mm)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "modelname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

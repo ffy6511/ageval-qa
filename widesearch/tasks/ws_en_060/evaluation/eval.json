@@ -1,0 +1,56 @@
+{
+  "unique_columns": [
+    "year",
+    "ranking"
+  ],
+  "required": [
+    "year",
+    "ranking",
+    "game",
+    "publisher",
+    "releasedate"
+  ],
+  "eval_pipeline": {
+    "year": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "ranking": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "game": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "releasedate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "publisher": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

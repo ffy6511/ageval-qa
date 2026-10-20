@@ -1,0 +1,78 @@
+{
+  "unique_columns": [
+    "任务名称"
+  ],
+  "required": [
+    "任务名称",
+    "航天员姓名",
+    "发射地点",
+    "发射时间",
+    "着陆时间",
+    "着陆地点",
+    "任务时长"
+  ],
+  "eval_pipeline": {
+    "任务名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "航天员姓名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "发射时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "着陆时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "任务时长": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n任务时长误差在一分钟内都算对。"
+    },
+    "着陆地点": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "发射地点": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "年份",
+    "居民类别"
+  ],
+  "required": [
+    "年份",
+    "居民类别",
+    "人均可支配收入(元)",
+    "人均消费支出(元)"
+  ],
+  "eval_pipeline": {
+    "人均可支配收入(元)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "人均消费支出(元)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "居民类别": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

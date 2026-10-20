@@ -1,0 +1,109 @@
+{
+  "unique_columns": [
+    "地区"
+  ],
+  "required": [
+    "地区",
+    "2022年转移支付决算数",
+    "2022年一般性转移支付决算数",
+    "2022年专项转移支付决算数",
+    "2021年转移支付决算数",
+    "2021年一般性转移支付决算数",
+    "2021年专项转移支付决算数",
+    "2020年转移支付决算数",
+    "2020年一般性转移支付决算数",
+    "2020年专项转移支付决算数"
+  ],
+  "eval_pipeline": {
+    "2022年转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2022年一般性转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2022年专项转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2021年转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2021年一般性转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2021年专项转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2020年转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2020年一般性转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "2020年专项转移支付决算数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "地区": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

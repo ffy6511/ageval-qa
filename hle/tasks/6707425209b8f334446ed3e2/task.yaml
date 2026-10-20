@@ -1,0 +1,23 @@
+format: ageval.task/1
+task_id: 6707425209b8f334446ed3e2
+parameters:
+  id: "6707425209b8f334446ed3e2"
+  answer_type: "exactMatch"
+  category: "Physics"
+  has_image: false
+agent_profiles:
+  - id: solver
+  - id: judge
+limits:
+  wall_time_seconds: 900
+  evaluate_seconds: 600
+  agent_invocations: 1
+  agent_concurrency: 1
+artifacts:
+  publishable:
+    - id: response
+      path: artifacts/response.json
+evaluation:
+  inputs:
+    - artifact: response
+      target: artifacts/response.json

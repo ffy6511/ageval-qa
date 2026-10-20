@@ -1,0 +1,55 @@
+{
+  "unique_columns": [
+    "officialgroupname(english)"
+  ],
+  "required": [
+    "companyname",
+    "debutyear",
+    "officialgroupname(english)",
+    "firstwinsong",
+    "firstwindate"
+  ],
+  "eval_pipeline": {
+    "companyname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "debutyear": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "officialgroupname(english)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "firstwindate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "firstwinsong": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

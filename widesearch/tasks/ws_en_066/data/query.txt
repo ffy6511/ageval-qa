@@ -1,0 +1,12 @@
+I am analyzing the regional adaptation of Dyson’s Supersonic hair dryers (consumer edition) since their first launch. Please compile the official launch information and core specifications for every consumer-facing Supersonic model (excluding professional “HD Pro” salon  version) released between April 2016 and December 2024 in the U.S., China, and Japan. Omit any special-edition colorways that did not introduce new hardware. For each qualifying model–region pair, capture the following: Region (U.S., China, Japan), Model Code (e.g., HD01, HD03), First Retail Availability Date (in format YYYY-MM), Launch MSRP, Number of Included Attachments in a standard set, Warranty Term in years. 
+
+
+And present the compiled data in one Markdown table with following column names：Region , Model Code, First Retail Availability Date, Launch MSRP, Number of Included Attachments, Warranty(yrs).
+If any field is unavailable, enter NA.
+Launch MSRPs are launch-time official prices in the local market currency.
+When filling in the model, only two letters and numbers are required, for example: HD01.
+Use only Arabic numerals in Number of Included Attachments and Warranty(yrs)
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

@@ -1,0 +1,70 @@
+{
+  "unique_columns": [
+    "企业名称",
+    "财年"
+  ],
+  "required": [
+    "企业名称",
+    "财年",
+    "营业收入（元）",
+    "归属于上市公司股东的净利润（元）",
+    "基本每股收益（元/股）",
+    "加权平均净资产收益率（%）"
+  ],
+  "eval_pipeline": {
+    "营业收入（元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "归属于上市公司股东的净利润（元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "基本每股收益（元/股）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "加权平均净资产收益率（%）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "企业名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "财年": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

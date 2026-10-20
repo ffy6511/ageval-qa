@@ -1,0 +1,9 @@
+Hey, I'm gonna be in South Korea for a whole month, and I need your help grabbing a list of all the museums in Jongno or Gangnam district in Seoul that are still open for regular business as of June 2025 and show up on Google Maps as well. For each spot, can you include stuff like: the address, when it's open (hours) except holidays, whether it's free to get in or if there's a charge for an adult on regular days?
+
+Present the data in one Markdown table with columns: Museum, Address, Business Hours, Admission Fee Status (free or charged).
+
+Note: Address should be in the form No. road/street, District, Seoul. For example, 37 Samcheong-ro, Jongno District, Seoul.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

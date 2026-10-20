@@ -1,0 +1,23 @@
+I want to compare the labor market between four southern US states, namely Alabama, Georgia, Louisiana, and Mississippi. I need to compile monthly employment data not seasonally adjusted for these states from January 2024 to June 2024 (including January 2024 and June 2024). Please provide the following:
+Unadjusted Unemployment Rate
+Labor Force Participation Rate
+All Employees – Total Nonfarm (Thousands of Persons)
+All Employees – Manufacturing (Thousands of Persons)
+Average Hourly Earnings of All Employees (Total Private)
+Average Hourly Earnings of All Employees (Manufacturing)
+
+Please output the organized data in Markdown table format.
+The column names in the table should be, in order:
+States
+Statistical Month
+Unadjusted Unemployment Rate(%)
+Labor Force Participation Rate(%)
+All Employees – Total Nonfarm (in thousands)
+All Employees – Manufacturing (in thousands)
+Average Hourly Earnings of All Employees (Total Private)
+Average Hourly Earnings of All Employees (Manufacturing)
+For Statistical Month, use the format yyyy-mm, like 2024-06.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

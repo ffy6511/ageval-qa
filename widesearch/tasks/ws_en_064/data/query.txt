@@ -1,0 +1,8 @@
+I am currently representing a case and need to gather information from the codes and constitution of the U.S. states to aid in my defense, except for Delaware, Nevada, New York, Massachusetts, New Hampshire, Rhode Island, Tennessee, Vermont, West Virginia. Please provide the following information as of 2025-07-01 in a tabular format:
+State Name, Current Constitution Effective Date(YYYY-MM-DD), Number of Constitutional Amendments, Number of Articles in Current Constitution.
+
+Please organize the results in one Markdown table with the following column names in order:
+State Name, Current Constitution Effective Date, Number of Constitutional Amendments, Number of Articles in Current Constitution.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

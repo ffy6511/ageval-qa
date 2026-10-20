@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "年份",
+    "排名"
+  ],
+  "required": [
+    "年份",
+    "排名",
+    "歌曲名称",
+    "歌手"
+  ],
+  "eval_pipeline": {
+    "排名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "歌曲名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "歌手": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Please help me count the Korean dramas that aired on Netflix between January 2024 and December 2024. I need the Drama Title, Premiere Date(YYYY-MM-DD), Director, Number of Episodes and Awards from Baeksang Art Awards and Blue Dragon Film Awards won by the drama, its director. If the drama or related cast and staff have not received any awards, use “/” to indicate this. By the way, I only need the awarded prizes, not the ones that were only nominated.
+
+Please output the organized data in Markdown table format.
+ The column headers should be as follows:
+Drama Title, Premiere Date, Director, Number of Episodes, Awards.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is: 
+ ```markdown
+{data_content}
+```.

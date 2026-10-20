@@ -1,0 +1,86 @@
+{
+  "unique_columns": [
+    "reactorname"
+  ],
+  "required": [
+    "reactorname",
+    "country",
+    "reactortype",
+    "netcapacity(mw)",
+    "constructionstartyear",
+    "firstgridconnectiondate",
+    "commercialoperationdate",
+    "currentstatus"
+  ],
+  "eval_pipeline": {
+    "constructionstartyear": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "netcapacity(mw)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "firstgridconnectiondate": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "commercialoperationdate": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "reactorname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "country": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "reactortype": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "currentstatus": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

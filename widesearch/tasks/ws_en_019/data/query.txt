@@ -1,0 +1,9 @@
+I am working on a tracking report regarding the biotechnology and pharmaceutical companies that went public on NASDAQ in 2024, namely: CG Oncology, Zenas BioPharma, Upstream Bio, MBX Biosciences, and Metagenomi. I want to start by organizing some data. Please help me find out the listing date (as in yyyy/mm/dd), listing board(full name), initial offering price, total funds raised in 2024. Additionally, I need the revenue, net income attributable to shareholders and R&D expenses disclosed in their 2024 annual reports for these companies. All amounts should be in United States dollars, numerical only, and retained to two decimals. If no relevant data can be found, please fill in with N/A.
+
+Please output the organized data in the format of one Markdown table.
+The column names in the table are as follows in sequence:
+Company Name, Listing board, Bloomberg ticker, Listing Date, Initial Offering Price(per share), Total Funds Raised in 2024(million), Revenue in 2024(million), Net Income Attributable to Shareholders(million), R&D Expenses(million)
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

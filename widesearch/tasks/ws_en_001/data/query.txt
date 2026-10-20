@@ -1,0 +1,10 @@
+My son is about to start his university applications in 2025 for postgraduates but he’s still uncertain about both his major and which universities to apply to. Could you help me find the top five universities in each of the five broad subjects from the QS World University Rankings by Subject 2025, and also check their standings in the QS World University Rankings 2025 and the Times Higher Education World University Rankings 2025? And I need the home page of the university's official website, standard application deadline for regular decision as well as the application fee without the fee waiver.
+
+Please organize the results in one Markdown table with the following columns:
+Subject, University, QS World University Rankings by Subject 2025, QS World University Rankings 2025, Times Higher Education  World University Rankings 2025, Home Page, Application Deadline, Application Fee
+Please use the universities’ full official names in English. 
+Use only Arabic numerals in the ranking, for example: 1.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is 
+```markdown
+{data_content}
+```.

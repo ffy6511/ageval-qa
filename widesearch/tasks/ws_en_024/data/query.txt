@@ -1,0 +1,9 @@
+Please research the following information about Super Bowl: date, champions, host stadium, host city, Nielsen HHLD rating, average viewership across all platforms (million, round to one decimal place), and the half-time show sponsors.  I need annual statistics from 2001 to 2025 (including 2001 and 2025). If viewership is unavailable, use '-' instead.
+
+Please give me the organized data in the format of one Markdown table, with the column names as: 
+Year, Champion, Host Stadium, Host City,  Nielsen HHLD Rating, Viewership (million), Half-time Show Sponsors.
+For host city, give the full name of the city, like Houston. 
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

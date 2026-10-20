@@ -1,0 +1,57 @@
+{
+  "unique_columns": [
+    "产品名称"
+  ],
+  "required": [
+    "产品名称",
+    "首发年份",
+    "容量",
+    "容量对应售价（美元）",
+    "核心新增技术/功能"
+  ],
+  "eval_pipeline": {
+    "首发年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "容量": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "容量对应售价（美元）": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "核心新增技术/功能": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n只答出其中一个可算对"
+    },
+    "产品名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

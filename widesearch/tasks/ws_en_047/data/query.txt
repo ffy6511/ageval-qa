@@ -1,0 +1,14 @@
+I am studying how partisan standoffs influence administrative efficiency and the macro-economy, so I need a quantitative overview of every federal government shutdown.
+
+Please output one Markdown table with the columns, in this order:
+ Start Date | End Date | Duration (days) | President |  Speaker of the House | Senate Majority Leader | Furloughed Employees | Estimated Loss (USD million) | Main Disputed Provisions |
+
+Requirements:
+1. Cover every officially recorded federal government shutdown between October 1976 and December 2024 (including October 1976 and December 2024).
+2. Date should be formatted as YYYY-MM-DD.
+3. Record the President, House and Senate leaders during the shutdown period.
+4. For furloughed employees, give the exact number. If there is no exact number or there is no employee furloughed, fill in with "-".
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

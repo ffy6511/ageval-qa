@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "年份",
+    "网络基础设施类别"
+  ],
+  "required": [
+    "年份",
+    "网络基础设施类别",
+    "新增数量/长度(万个/万公里)",
+    "总计数量/长度(万个/万公里)"
+  ],
+  "eval_pipeline": {
+    "新增数量/长度(万个/万公里)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "总计数量/长度(万个/万公里)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "网络基础设施类别": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Could you help me compile a list of all base models from Samsung's Galaxy S Series and Galaxy Note Series smartphones released in the U.S. market between January 2015 and May 2025 (including January 2015 and May 2025 )? Please include the following details for each model.
+
+Notes:
+Market Restriction: Only include models officially released in the U.S. market (exclude region-exclusive models limited to specific countries/regions).
+Base Model Definition: Refers to models without suffixes (common suffixes: Ultra, Plus, FE, 5G, Z, Flip, Fold, "Edition", etc.). For a model lineup, select the version with the lowest launch price (e.g., "Galaxy S23" with 8GB+128GB). Note: "5G" and "4G" are not considered suffixes.
+4G/5G Preference: If a base model has both 4G and 5G versions, only include the 5G version.
+Release Date: The time when it was first released in the U.S..
+Formatting Rules:
+Release Date: yyyy-mm-dd
+Pre-installed OS: Android/iOS number (e.g., Android 5)
+Resolution: "numberxnumber" (e.g., 2340x1080)
+CPU Manufacturing Process: "number+unit" (e.g., 4nm)
+CPU Core Count: "x+core" (e.g., 8-core)
+Highest Camera Resolution: "number+unit" (e.g., 200MP)
+CPU Model: Omit the processor brand (e.g., only "Snapdragon 8 Gen 2" instead of "Qualcomm Snapdragon 8 Gen 2")
+storage: refer to the lowest storage of the base model.
+
+Please organize the results in one Markdown table with the specified column order:
+Model Name, Release Date, Pre-installed OS, Processor Brand, CPU Model, CPU Manufacturing Process, CPU Core Count, Screen Size, Resolution, Battery Capacity, RAM Size, Storage Size, Highest Camera Resolution, Launch Price (USD)
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

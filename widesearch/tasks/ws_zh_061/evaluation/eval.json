@@ -1,0 +1,125 @@
+{
+  "unique_columns": [
+    "处理器型号"
+  ],
+  "required": [
+    "时间",
+    "核心架构",
+    "产品系列",
+    "处理器型号",
+    "制造工艺",
+    "核心",
+    "线程",
+    "核心频率(ghz)",
+    "二级缓存(mb)",
+    "三级缓存(mb)",
+    "显卡型号",
+    "显卡核心数"
+  ],
+  "eval_pipeline": {
+    "核心": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "线程": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "二级缓存(mb)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "三级缓存(mb)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "显卡核心数": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.01
+    },
+    "时间": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "核心架构": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "产品系列": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "制造工艺": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "显卡型号": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "处理器型号": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "核心频率(ghz)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

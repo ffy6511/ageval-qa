@@ -1,0 +1,49 @@
+{
+  "unique_columns": [
+    "学校名称",
+    "专业"
+  ],
+  "required": [
+    "学校名称",
+    "专业",
+    "学费",
+    "入学要求"
+  ],
+  "eval_pipeline": {
+    "学校名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "入学要求": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n需要覆盖参考答案主要英文资质要求，如参考答案包含推荐信以及特定技能（如会python）等特异化需求，也需要一并给出。"
+    },
+    "学费": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "专业": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

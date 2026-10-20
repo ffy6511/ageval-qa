@@ -1,0 +1,13 @@
+I want to research Apple Inc.’s product development history by compiling a list of each generation of its flagship smartphone product line (e.g., iPhone, iPhone 3G, iPhone 3GS, … up to the iPhone 15 series) released in the U.S. market between January 9, 2007 (the original iPhone’s launch date), and December 31, 2024. 
+For each model, please provide:
+• Product name  
+• Launch year  
+• Storage capacity (separate multiple options by /, e.g. 4GB/8GB)  
+• Official launch price in USD (listed separately for different capacities,e.g., $199/$299 )  
+• One key new technology or feature introduced with that generation (a widely recognized highlight promoted by Apple, such as “first to support the App Store,” “first Retina display,” or “introduction of Face ID”).  
+Only include the standard flagship models released each September or October (i.e., the main iPhone series and their Plus/Pro variants), excluding non-flagship lines like the SE or C series. If the launch price or key new feature cannot be confirmed, leave that field blank in the table.
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are: Product, Launch Year, Capacity, Launch Price (USD), Core New Technologies/Features.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

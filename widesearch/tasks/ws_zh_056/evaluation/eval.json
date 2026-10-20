@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "院士姓名"
+  ],
+  "required": [
+    "学校名称",
+    "院士姓名",
+    "出生年份",
+    "获得奖项"
+  ],
+  "eval_pipeline": {
+    "院士姓名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "出生年份": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "获得奖项": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "学校名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

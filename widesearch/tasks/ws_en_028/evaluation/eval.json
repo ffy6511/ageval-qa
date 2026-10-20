@@ -1,0 +1,55 @@
+{
+  "unique_columns": [
+    "brand"
+  ],
+  "required": [
+    "brand",
+    "worldwide",
+    "newyork",
+    "detroit",
+    "seattle"
+  ],
+  "eval_pipeline": {
+    "brand": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "newyork": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "detroit": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "seattle": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "worldwide": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    }
+  }
+}

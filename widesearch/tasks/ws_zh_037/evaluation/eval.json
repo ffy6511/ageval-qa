@@ -1,0 +1,56 @@
+{
+  "unique_columns": [
+    "排名"
+  ],
+  "required": [
+    "排名",
+    "物业公司名称",
+    "微信公众号名称",
+    "阅读量",
+    "物业公司成立年份"
+  ],
+  "eval_pipeline": {
+    "排名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "物业公司名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "物业公司成立年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "阅读量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "微信公众号名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

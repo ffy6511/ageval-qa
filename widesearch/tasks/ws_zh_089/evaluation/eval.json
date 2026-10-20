@@ -1,0 +1,65 @@
+{
+  "unique_columns": [
+    "学校名称"
+  ],
+  "required": [
+    "学校名称",
+    "建校年份",
+    "主管部门",
+    "学校官网地址",
+    "2025中国校友会排行榜名次",
+    "2026qs世界大学排名名次"
+  ],
+  "eval_pipeline": {
+    "建校年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "2025中国校友会排行榜名次": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "2026qs世界大学排名名次": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "学校官网地址": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "主管部门": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "学校名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

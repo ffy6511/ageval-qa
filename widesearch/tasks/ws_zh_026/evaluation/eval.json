@@ -1,0 +1,47 @@
+{
+  "unique_columns": [
+    "软科世界一流学科",
+    "软科学科2024排名",
+    "学校名称"
+  ],
+  "required": [
+    "软科世界一流学科",
+    "软科学科2024排名",
+    "学校名称",
+    "qs学校2025排名"
+  ],
+  "eval_pipeline": {
+    "软科世界一流学科": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "软科学科2024排名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "学校名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "qs学校2025排名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

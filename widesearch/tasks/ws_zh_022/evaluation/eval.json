@@ -1,0 +1,57 @@
+{
+  "unique_columns": [
+    "官员名字",
+    "职位"
+  ],
+  "required": [
+    "官员名字",
+    "职位",
+    "上任日期",
+    "离任日期",
+    "继任者"
+  ],
+  "eval_pipeline": {
+    "职位": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "上任日期": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "离任日期": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "官员名字": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "继任者": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

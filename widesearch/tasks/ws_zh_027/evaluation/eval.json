@@ -1,0 +1,59 @@
+{
+  "unique_columns": [
+    "交易所名称",
+    "统计月份"
+  ],
+  "required": [
+    "交易所名称",
+    "统计月份",
+    "总成交量（手）",
+    "总成交额（万元）",
+    "总持仓量（手）"
+  ],
+  "eval_pipeline": {
+    "交易所名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "总成交量（手）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "总成交额（万元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "总持仓量（手）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "统计月份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

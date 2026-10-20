@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "国家",
+    "电影名"
+  ],
+  "required": [
+    "年份",
+    "国家",
+    "电影名",
+    "导演",
+    "本国累计票房收益",
+    "电影类型"
+  ],
+  "eval_pipeline": {
+    "国家": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "本国累计票房收益": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "导演": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n答出子集且未答出参考答案以外的内容时可算正确"
+    },
+    "电影类型": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n答出参考答案中的部分类型（即子集）即视为正确、基于权威来源及官方依据的类型标注同样正确、答出其中一个子集其他类型内容合理也视为正确。"
+    },
+    "电影名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

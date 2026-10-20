@@ -1,0 +1,8 @@
+I'd like to know the information about all Ford vehicles first launched and revived from January 1, 2010 to December 31, 2024 in the US (not including model updates or facelifts). Information is needed as follows: Model Name (Year), Price, Dimensions (L/W/H, mm), Wheelbase (mm), Maximum Torque (N·m), Front Suspension Type, Rear Suspension Type, Advanced Driving Assistance System (Please list all ADAS equipped in this model), Intelligent Parking Assist (Please list all IPA equipped in this model). All information is for the standard edition, and if it doesn't have ADAS or IPA, fill in '-'. 
+
+Please organize the results in one Markdown table with the following columns: Model Name, Price (USD, launch MSRPs), Dimensions L/W/H (mm), Wheelbase (mm), Max Torque (N·m), Front Suspension, Rear Suspension, Advanced-Driver-Assist Systems (ADAS²), Intelligent Parking Assist
+Dimensions should adopt the data that exclude mirror and the launch MSRPs usually refers to price without destination fee.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

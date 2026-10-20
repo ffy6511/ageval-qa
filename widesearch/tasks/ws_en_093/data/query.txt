@@ -1,0 +1,10 @@
+I want to catch up with the current large language model trends, so I need to quickly learn about them. Please help me compile a list of LLM-related papers officially published by Doubao Seed Team from Bytedance and DeepSeek from 2023 to the first half of 2025. The list should include: Publication date (in yyyy-mm-dd format, e.g. 2024-02-01), Paper title (in original English as published), and authors. By the way, I only want papers published independently by Doubao Seed Team from Bytedance and the DeepSeek team, not collaborative papers.
+
+Please output the compiled data in Markdown table format.
+ The column headers should be:
+Company Name, Publication Date, Paper Title, Authors.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is:
+```markdown
+{data_content}
+```.

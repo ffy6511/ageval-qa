@@ -1,0 +1,10 @@
+It’s now June 2025, and I’ve recently become fascinated with rap music. I’d like to know what rap-related categories have been awarded at the Grammys over the past 30 years, and for each winning entry, I need the following information: Award Category, Winning Song/Album, Performer(s) (including featured artists, listed in the official order—e.g., Killer Mike (ft. André 3000, Future & Eryn Allen Kane)). Please provide a complete list based on official Grammy records.
+
+Please present the organized data in one Markdown table format.
+The column headers should be, in order:
+Annual, Award Category, Winning Song/Album, Performer(s).
+For the 62nd annual award, just output 62 in the column of "Annual".
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

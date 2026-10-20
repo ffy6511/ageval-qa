@@ -1,0 +1,10 @@
+My child is about to finish undergraduate studies and is planning to pursue a full-time master's degree in Hong Kong, specifically in a business school. Please help me compile a comparison table for 2025 covering The University of Hong Kong (HKU), The Chinese University of Hong Kong (CUHK), and The Hong Kong University of Science and Technology (HKUST). The table should include relevant business-related programs (excluding MBA), entry requirements, and tuition fees (in HKD).
+Please exclude joint programs with foreign universities and dual-degree/master’s programs, as we are only interested in solid, stand-alone degrees. Also exclude the programs those are subject to University's Approval.
+
+Please present the organized data in one Markdown table format.
+The column headers should be, in order:
+University, Major, Tuition, Requirements.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

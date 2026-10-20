@@ -1,0 +1,20 @@
+Please help me organize a table based on The 13 USA National Parks given below. I need the following information: the name of the national park, the states it is located in, total visitor spending in 2023, the number of visitors in 2023, the serving superintendent as of May 2025, Mailing Address, and hunting Regulations. 
+1. Pearl Harbor National Memorial  
+2. Muir Woods National Monument  
+3. Mount Rushmore National Memorial  
+4. Arches National Park  
+5. White Sands National Park  
+6. Zion National Park  
+7. Yellowstone National Park  
+8. Acadia National Park  
+9. Crater Lake National Park  
+10. Haleakala National Park  
+11. Great Smoky Mountains National Park  
+12. Redwood National and State Parks  
+13. Canyonlands National Park  
+
+Please output the organized data in one Markdown table format. The column names in the table should be: National Park Name, State(s), 2023 Total Visitor Spending(million dollars), 2023 Visitors Number(million), Superintendent, Mailing Address, Hunting Regulations.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

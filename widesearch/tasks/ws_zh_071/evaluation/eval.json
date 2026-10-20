@@ -1,0 +1,79 @@
+{
+  "unique_columns": [
+    "电影名"
+  ],
+  "required": [
+    "上映年份",
+    "电影名",
+    "题材",
+    "导演",
+    "领衔主演",
+    "累积票房（十亿韩元）",
+    "累积观影人次"
+  ],
+  "eval_pipeline": {
+    "累积票房（十亿韩元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "累积观影人次": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "电影名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "题材": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n答出参考答案中的部分类型（即子集）即视为正确、基于权威来源及官方依据的类型标注同样正确、答出其中一个子集其他类型内容合理也视为正确"
+    },
+    "领衔主演": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n接受答出的是参考答案的子集。\n电影名称：电影名称不需要完全一致，有别的翻译也可接受，或者只给出了电影名+第几部如：将复仇者联盟3：无限战争说出复仇者联盟3也可接受"
+    },
+    "上映年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "导演": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n全称和简称输出都可以"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+format: ageval.task/1
+task_id: 672368e4c08f59acd19d8353
+parameters:
+  id: "672368e4c08f59acd19d8353"
+  answer_type: "multipleChoice"
+  category: "Humanities/Social Science"
+  has_image: false
+agent_profiles:
+  - id: solver
+  - id: judge
+limits:
+  wall_time_seconds: 900
+  evaluate_seconds: 600
+  agent_invocations: 1
+  agent_concurrency: 1
+artifacts:
+  publishable:
+    - id: response
+      path: artifacts/response.json
+evaluation:
+  inputs:
+    - artifact: response
+      target: artifacts/response.json

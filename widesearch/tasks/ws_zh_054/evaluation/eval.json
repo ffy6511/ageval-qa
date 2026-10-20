@@ -1,0 +1,69 @@
+{
+  "unique_columns": [
+    "公司",
+    "年度"
+  ],
+  "required": [
+    "公司",
+    "年度",
+    "总收入（亿元）",
+    "经营盈利（亿元）",
+    "经营利润率",
+    "每股基本盈利（元）"
+  ],
+  "eval_pipeline": {
+    "年度": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "总收入（亿元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "经营盈利（亿元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "经营利润率": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "每股基本盈利（元）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "公司": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

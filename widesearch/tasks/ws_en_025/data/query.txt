@@ -1,0 +1,8 @@
+Make a comprehensive, verified list of abortion clinics currently operating in California (2024) within 65 miles of 1417-1499 E Fedora Ave, Fresno, California, 93704. Omit any facilities that closed during 2024.
+
+Please organize the results in one Markdown table with the following column names in order:
+Clinic, County, Full Address, Phone Number, Saturday Operation Hours
+List the phone number in the format of (xxx) xxx-xxxx  
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

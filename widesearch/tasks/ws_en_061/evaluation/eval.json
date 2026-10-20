@@ -1,0 +1,83 @@
+{
+  "unique_columns": [
+    "name"
+  ],
+  "required": [
+    "name",
+    "state/territory",
+    "office/position",
+    "party",
+    "startdate",
+    "enddate",
+    "accessionmode",
+    "leavingreason"
+  ],
+  "eval_pipeline": {
+    "office/position": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "party": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "accessionmode": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "leavingreason": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "startdate": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "enddate": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "name": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "state/territory": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

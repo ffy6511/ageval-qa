@@ -1,0 +1,10 @@
+I'm putting together an introductory video on Angelina Jolie, Nicole Kidman, Cate Blanchett, and Jodie Foster.  Please find out every film in which each actress had a role between 2010 and 2020 (including 2010 and 2020).  For each movie, list the title, the character's name, the release year, and any awards they won.  Short genre projects and those for which they only provided voice acting should be excluded.
+
+Please output the organized data in the format of one Markdown table.
+The table's columns, in order, are:
+Actress, Year of Release, Title of Film, Character Name, Awards.
+Notes: if the film didn't win any awards, please fill in NA.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

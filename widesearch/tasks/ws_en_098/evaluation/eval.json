@@ -1,0 +1,49 @@
+{
+  "unique_columns": [
+    "country"
+  ],
+  "required": [
+    "country",
+    "2024gdpgrowth(%)",
+    "2023gdpgrowth(%)",
+    "2022gdpgrowth(%)"
+  ],
+  "eval_pipeline": {
+    "2024gdpgrowth(%)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "2023gdpgrowth(%)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "2022gdpgrowth(%)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "country": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

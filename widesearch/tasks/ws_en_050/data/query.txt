@@ -1,0 +1,9 @@
+For a comparative politics study on descriptive representation, compile the share of women in the lower or single chamber of every OECD member’s national parliament at four benchmark dates: 31 Dec 1995, 31 Dec 2005, 31 Dec 2015, and 31 Dec 2024.
+Exclude upper chambers. Regarding the total seats, please provide the total number of seats in the lower parliament.  If a country joined the OECD after 1995, record 'NA' for all statistics for years before membership.
+
+Please output one Markdown table with the columns, in this exact order:
+ Country | Share of Women Seats 1995(%) | Total Seats 1995 | Share of Women Seats 2005(%) | Total Seats 2005 | Share of Women Seats 2015(%) | Total Seats 2015 |  Share of Women Seats 2024(%) | Total Seats 2024 
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

@@ -1,0 +1,9 @@
+For a paper on U.S. politics, please list the U.S. presidents and vice presidents who won in each presidential election since the founding of the country until 2025. If any data is unavailable, please use "-" as a placeholder.
+
+Please present the organized data in one Markdown table format.
+The column headers should be, in order:
+Year, President, Vice President, Party, Popular Vote Count, Electoral Vote Count.
+Notes: If the president did not represent any political party, list as "Independent".
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.`

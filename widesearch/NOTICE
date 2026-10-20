@@ -1,0 +1,7 @@
+WideSearch agent prompts, tool schemas, and table metrics are adapted from
+ByteDance-Seed/WideSearch, commit 9825ba7b140b71d81b364793f86dabe4cfed6749.
+That code is MIT licensed. Copyright (c) 2025 Bytedance Ltd. and/or its affiliates.
+
+The questions and gold tables are the Hugging Face dataset
+ByteDance-Seed/WideSearch, revision 6531a7e5b497d44c8912407e0cb3dc95bd98cc09.
+Their license is CC0-1.0. See LICENSE-DATA.

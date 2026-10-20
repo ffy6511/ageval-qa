@@ -1,0 +1,97 @@
+{
+  "unique_columns": [
+    "相机名称"
+  ],
+  "required": [
+    "相机名称",
+    "有效像素",
+    "重量",
+    "最高每秒拍摄幅数",
+    "快门速度范围",
+    "最高对焦点数目",
+    "数码影像处理器",
+    "iso范围",
+    "相机内减震技术"
+  ],
+  "eval_pipeline": {
+    "相机名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "最高对焦点数目": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "快门速度范围": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n括号里的内容未提及也算对\n快门速度范围：快门速度最高或者最低范围可以根据实际给出的进行调整，如：1/8000至30秒（以1/3或1/2ev为步长进行微调，m模式下可扩展至900s），可以写成1/8000至30秒也可以写成1/8000至900秒"
+    },
+    "数码影像处理器": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "iso范围": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "相机内减震技术": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "有效像素": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "重量": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "最高每秒拍摄幅数": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

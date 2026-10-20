@@ -1,0 +1,46 @@
+{
+  "unique_columns": [
+    "行政区划",
+    "姓名"
+  ],
+  "required": [
+    "行政区划",
+    "姓名",
+    "上任日期",
+    "离任日期"
+  ],
+  "eval_pipeline": {
+    "行政区划": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "姓名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "上任日期": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "离任日期": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    }
+  }
+}

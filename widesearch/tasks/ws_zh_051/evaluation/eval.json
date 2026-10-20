@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "中文名称"
+  ],
+  "required": [
+    "中文名称",
+    "英文名称",
+    "中国上映时间",
+    "中国大陆票房（单位：人民币）"
+  ],
+  "eval_pipeline": {
+    "中国上映时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "中国大陆票房（单位：人民币）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "中文名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "英文名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

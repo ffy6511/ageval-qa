@@ -1,0 +1,38 @@
+{
+  "unique_columns": [
+    "学校"
+  ],
+  "required": [
+    "a区地区",
+    "学校",
+    "2025年复试分数线"
+  ],
+  "eval_pipeline": {
+    "学校": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "a区地区": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "2025年复试分数线": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

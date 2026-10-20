@@ -1,0 +1,6 @@
+Please sort out all African countries involved in the "Belt and Road" initiative and their capitals as of June 2025, and query the surface area (in sq.km, using 2022 statistics, rounded to an integer), population density (people/sq.km of land area, using 2022 statistics, rounded to an integer), total population (in thousand, using 2023 statistics, rounded to an integer), and the proportion of merchandise trade in GDP (in percentage of GDP, using 2023 statistics, rounded to one decimal place) of these countries according to the statistics of the World Bank. 
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are: Country, Capital City, Surface Area (km²), Population Density (people/km² of land area), Total Population (thousands), Merchandise Trade (% of GDP).
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

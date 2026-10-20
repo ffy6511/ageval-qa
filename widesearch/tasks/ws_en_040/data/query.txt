@@ -1,0 +1,8 @@
+I'd like to get a list of the top 10 apps downloaded worldwide each year from 2020 to 2022. For each app, I need to know its category (e.g., game, health app, etc.), the company that created it, the country of origin of the company, and the download volume (in millions).
+
+Please organize the results in one Markdown table with the following columns names in order:
+Year, Rank, App, Downloads(million), Category, Parent Company, Country
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

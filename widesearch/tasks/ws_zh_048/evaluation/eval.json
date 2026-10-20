@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "演员名称",
+    "影视名称"
+  ],
+  "required": [
+    "演员名称",
+    "播出年份",
+    "影视名称",
+    "角色名",
+    "搭档演员",
+    "播放平台"
+  ],
+  "eval_pipeline": {
+    "演员名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "播出年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "播放平台": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n只答出子集可算对"
+    },
+    "影视名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "角色名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n不加姓也行，如晴雪和风晴雪都可以"
+    },
+    "搭档演员": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n中文名和英文名都可以"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "unique_columns": [
+    "饭店名称"
+  ],
+  "required": [
+    "饭店名称",
+    "市区",
+    "星级标牌号",
+    "具体地址"
+  ],
+  "eval_pipeline": {
+    "饭店名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "市区": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "星级标牌号": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "具体地址": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n缺失北京市时可豁免"
+    }
+  }
+}

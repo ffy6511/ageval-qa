@@ -1,0 +1,18 @@
+Summarize all smartphones released by Google between January 2022 and July 2025 (including January 2022 and July 2025). Include the following details: device name, available colors, announced date, RAM, U.S. launch price ($), materials, size, OS, battery capacity.
+
+Present the data in one Markdown table with columns: Device, Available colors, Announced date, RAM, U.S. launch price (MSRP by storage), Materials (frame / front & back), Size (H × W × D; mm), Launch OS, Battery capacity.
+
+Notes:
+Specify different prices for varying storage tiers using Google’s initial MSRP in USD. And please list all available colors per model. For foldable phones, the dimensions column must include two specifications: unfolded dimensions and folded dimensions.
+
+Formatting Rules:
+Available colors: separated by commas
+Announced date: yyyy-mm-dd
+RAM: number GB, e.g., 2 GB
+U.S. launch price: If there are more than one storage editions, use comma to separate them, such as 128 GB: 300, 256 GB: 500.
+Materials: frame's material / material A front, B back. e.g., steel / GG Victus 2 front, metal back. If the material of front and back is the same one, you can write as  metal / glass front & back.
+Battery capacity: xxx mAh.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

@@ -1,0 +1,39 @@
+{
+  "unique_columns": [
+    "2024年steam年度最畅销游戏"
+  ],
+  "required": [
+    "2024年steam年度最畅销游戏",
+    "发行公司",
+    "获奖游戏"
+  ],
+  "eval_pipeline": {
+    "2024年steam年度最畅销游戏": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "发行公司": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "获奖游戏": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

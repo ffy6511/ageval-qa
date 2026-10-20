@@ -1,0 +1,58 @@
+{
+  "unique_columns": [
+    "年份",
+    "城市"
+  ],
+  "required": [
+    "年份",
+    "城市",
+    "净流入人口数或净流出人口数（万人）",
+    "出生人口数（万人）",
+    "死亡人口数（万人）"
+  ],
+  "eval_pipeline": {
+    "净流入人口数或净流出人口数（万人）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "出生人口数（万人）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "死亡人口数（万人）": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "城市": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

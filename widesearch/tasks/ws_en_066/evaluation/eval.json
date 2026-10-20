@@ -1,0 +1,65 @@
+{
+  "unique_columns": [
+    "region",
+    "modelcode"
+  ],
+  "required": [
+    "region",
+    "modelcode",
+    "firstretailavailabilitydate",
+    "launchmsrp",
+    "numberofincludedattachments",
+    "warranty(yrs)"
+  ],
+  "eval_pipeline": {
+    "numberofincludedattachments": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "warranty(yrs)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "firstretailavailabilitydate": {
+      "preprocess": [
+        "norm_date"
+      ],
+      "metric": [
+        "date_near"
+      ]
+    },
+    "launchmsrp": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    },
+    "region": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "modelcode": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

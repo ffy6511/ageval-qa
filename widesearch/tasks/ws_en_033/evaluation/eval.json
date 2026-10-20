@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "company",
+    "year"
+  ],
+  "required": [
+    "company",
+    "year",
+    "totalrevenue(billion)",
+    "operatingprofit(billion)",
+    "operatingprofitmargin",
+    "fcf(billion)"
+  ],
+  "eval_pipeline": {
+    "totalrevenue(billion)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "operatingprofit(billion)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "operatingprofitmargin": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "fcf(billion)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "company": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "year": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

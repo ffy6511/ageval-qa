@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "exchangename",
+    "statisticalmonth"
+  ],
+  "required": [
+    "exchangename",
+    "statisticalmonth",
+    "totaltradingvalue(usdmillions)",
+    "totalnumberoflistedcompanies",
+    "domesticmarketcapitalization(usdmillions)",
+    "indexlevels"
+  ],
+  "eval_pipeline": {
+    "totaltradingvalue(usdmillions)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "totalnumberoflistedcompanies": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "domesticmarketcapitalization(usdmillions)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "indexlevels": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "exchangename": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "statisticalmonth": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

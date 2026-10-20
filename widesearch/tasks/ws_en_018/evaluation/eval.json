@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "fiscalyear"
+  ],
+  "required": [
+    "fiscalyear",
+    "federalbudget",
+    "federalspending",
+    "federaldeficit",
+    "nationaldebt",
+    "netinterestcost"
+  ],
+  "eval_pipeline": {
+    "fiscalyear": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "federalbudget": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "federalspending": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "federaldeficit": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "nationaldebt": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    },
+    "netinterestcost": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    }
+  }
+}

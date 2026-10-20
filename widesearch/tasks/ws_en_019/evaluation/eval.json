@@ -1,0 +1,95 @@
+{
+  "unique_columns": [
+    "companyname"
+  ],
+  "required": [
+    "companyname",
+    "listingboard",
+    "bloombergticker",
+    "listingdate",
+    "initialofferingprice(pershare)",
+    "totalfundsraisedin2024(million)",
+    "revenuein2024(million)",
+    "netincomeattributabletoshareholders(million)",
+    "r&dexpenses(million)"
+  ],
+  "eval_pipeline": {
+    "companyname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "listingboard": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "listingdate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "initialofferingprice(pershare)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "revenuein2024(million)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "netincomeattributabletoshareholders(million)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "r&dexpenses(million)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "totalfundsraisedin2024(million)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "bloombergticker": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

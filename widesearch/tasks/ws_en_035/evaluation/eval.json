@@ -1,0 +1,89 @@
+{
+  "unique_columns": [
+    "states",
+    "statisticalmonth"
+  ],
+  "required": [
+    "states",
+    "statisticalmonth",
+    "unadjustedunemploymentrate(%)",
+    "laborforceparticipationrate(%)",
+    "allemployees–totalnonfarm(inthousands)",
+    "allemployees–manufacturing(inthousands)",
+    "averagehourlyearningsofallemployees(totalprivate)",
+    "averagehourlyearningsofallemployees(manufacturing)"
+  ],
+  "eval_pipeline": {
+    "states": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "unadjustedunemploymentrate(%)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "laborforceparticipationrate(%)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "allemployees–totalnonfarm(inthousands)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "allemployees–manufacturing(inthousands)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "averagehourlyearningsofallemployees(totalprivate)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "averagehourlyearningsofallemployees(manufacturing)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "statisticalmonth": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

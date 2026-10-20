@@ -1,0 +1,102 @@
+{
+  "unique_columns": [
+    "调整年份",
+    "调整生效日期"
+  ],
+  "required": [
+    "调整年份",
+    "调整生效日期",
+    "调整前的一年期lpr",
+    "调整后的一年期lpr",
+    "调整前的五年期lpr",
+    "调整后的五年期lpr",
+    "调整前的7天逆回购操作利率",
+    "调整后的7天逆回购操作利率",
+    "调整前的金融机构存款准备金率",
+    "调整后的金融机构存款准备金率"
+  ],
+  "eval_pipeline": {
+    "调整前的一年期lpr": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整后的一年期lpr": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整前的五年期lpr": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整后的五年期lpr": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整前的7天逆回购操作利率": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整后的7天逆回购操作利率": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整前的金融机构存款准备金率": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整后的金融机构存款准备金率": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "调整年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "调整生效日期": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

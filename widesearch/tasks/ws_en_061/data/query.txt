@@ -1,0 +1,13 @@
+Please compile the names of every individual who has served as a chief executive Premier (state) or Chief Minister (mainland territory) of Australia at any time between 2015-01-01 and 2024-12-31 (including 2015-01-01 and 2024-12-31).
+Listing for each person: (1) Name, (2) State/Territory, (3) Office / Position (Premier / Chief Minister), (4) Party abbreviation, (5) Date first sworn in during the period, (6) Date finally left office during the period – or “incumbent” if still serving on 2024-12-31, (7) Mode of accession (general election / party leadership change / acting succession/ other), (8) Reason for leaving (election defeat / resignation / party coup / other).
+
+Please output the organized data in the format of one Markdown table.
+The column names are as follows:
+Name, State/Territory, Office / Position, Party, Start Date, End Date, Accession Mode, Leaving Reason
+Notes:
+- The dates should be provided in the yyyy-mm-dd format, such as 2022-02-01. If they are still in office in 2024, please indicate by writing "incumbent", and use "-" for their leaving reason.
+- Please use the party abbreviation for the column Party.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

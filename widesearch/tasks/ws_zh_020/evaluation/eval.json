@@ -1,0 +1,39 @@
+{
+  "unique_columns": [
+    "年度",
+    "感动中国年度人物"
+  ],
+  "required": [
+    "年度",
+    "感动中国年度人物",
+    "颁奖辞"
+  ],
+  "eval_pipeline": {
+    "年度": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "感动中国年度人物": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "颁奖辞": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

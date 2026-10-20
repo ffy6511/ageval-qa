@@ -1,0 +1,14 @@
+Compile comprehensive data for all major international tournaments during Lang Ping's tenure (2005-2008) as head coach of the U.S. Women's National Volleyball Team, including: Year, Event, Event Venue(precise to the country), roster of female competitors in their final match per event, and final position (e.g., Silver Medal, 4th Place). Major tournaments encompass the Olympic Games, FIVB Volleyball Women's World Championship, FIVB Volleyball Women's World Cup, FIVB Volleyball World Grand Prix, FIVB Volleyball Women's World Grand Champions Cup, and Montreux Volley Masters. You may separate the competitors' names by comma.
+
+Please organize the results in one Markdown table with the following columns:
+Year
+Event
+Event Venue
+Roster of Female Competitors
+Final Position
+
+Use '-' if no relevant information is available.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

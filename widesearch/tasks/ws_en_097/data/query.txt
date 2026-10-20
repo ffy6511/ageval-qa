@@ -1,0 +1,11 @@
+Tony Leung is a well-known film actor. Please help me sort out all the movies in which he has acted in and that have been released since his debut. The time span is 2000-2023 (including 2000 and 2023).
+The sorted information should include: film title, director, leading actress, year of premiere, distributor, and awards (only include the awards he won rather than any awards he was nominated for). By the way, please exclude anthology films, re-edited and re-released, and movies that he's dubbed.
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are as follows: Movie Title, Director, Leading Actress, Year of Premiere, Distributor, Awards.
+If some information cannot be retrieved, please output "-".
+Awards only refer to the awards won by Tony Leung in this film.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is: 
+ ```markdown
+{data_content}
+```.

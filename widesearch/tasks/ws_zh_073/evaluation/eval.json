@@ -1,0 +1,38 @@
+{
+  "unique_columns": [
+    "博物馆名称"
+  ],
+  "required": [
+    "博物馆名称",
+    "地址",
+    "开放时间"
+  ],
+  "eval_pipeline": {
+    "地址": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "开放时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "博物馆名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

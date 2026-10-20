@@ -1,0 +1,58 @@
+{
+  "unique_columns": [
+    "company",
+    "quarter"
+  ],
+  "required": [
+    "company",
+    "quarter",
+    "gmv(usdbn)",
+    "revenue(usdbn)",
+    "netprofit(usdbn)"
+  ],
+  "eval_pipeline": {
+    "gmv(usdbn)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "revenue(usdbn)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "netprofit(usdbn)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "company": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "quarter": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

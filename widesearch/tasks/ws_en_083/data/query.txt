@@ -1,0 +1,9 @@
+Please organize a table showing the champion teams of each of the European top five football leagues of 5 seasons from the 2020–21 season to the 2024–25 season, along with the Player of the Season (based on Sofascore ratings) for each season. For each player, include their club at the time and their rating score (keep two digits after the decimal point).
+
+Please present the organized data in a single Markdown table format, do not leave empty cells.
+The column headers should be:
+League, Season, Champion Club, MVP Player, Club, Rating.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

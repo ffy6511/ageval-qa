@@ -1,0 +1,45 @@
+{
+  "unique_columns": [
+    "statename"
+  ],
+  "required": [
+    "statename",
+    "currentconstitutioneffectivedate",
+    "numberofconstitutionalamendments",
+    "numberofarticlesincurrentconstitution"
+  ],
+  "eval_pipeline": {
+    "statename": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "currentconstitutioneffectivedate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "numberofconstitutionalamendments": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "numberofarticlesincurrentconstitution": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

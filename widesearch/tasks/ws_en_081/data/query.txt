@@ -1,0 +1,13 @@
+Give me some fun action games, please help retrieve the games on the 2024 Steam annual best-selling games platinum list and their publishing companies. Also, find out which games published by these companies have won the TGA (The Game Awards) Best Action Game and Best Action/Adventure Game awards in the past decade from 2014 to 2024.
+
+Fields to output and their meanings:
+2024 Steam Annual Best-Selling Games: The name of the game on the 2024 Steam annual best-selling games list.
+Publishing Company: The publishing company of the 2024 Steam annual best-selling game.
+Award-Winning Games: Refers to the games published by the corresponding company that have won the TGA Best Action Game and Best Action/Adventure Game awards from 2014 to 2024 (nominations do not count). If a publishing company has multiple award-winning games, all should be listed in one cell.
+
+Please output the compiled data in a Markdown-formatted table.
+The column headers should be:
+2024 Steam Best-Selling Games, Publisher, Award-Winning Games.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

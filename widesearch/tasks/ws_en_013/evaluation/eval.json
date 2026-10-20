@@ -1,0 +1,36 @@
+{
+  "unique_columns": [
+    "song"
+  ],
+  "required": [
+    "album",
+    "releaseyear",
+    "song"
+  ],
+  "eval_pipeline": {
+    "album": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "releaseyear": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "song": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "unique_columns": [
+    "年月",
+    "排名",
+    "地区"
+  ],
+  "required": [
+    "年月",
+    "地区",
+    "机场名",
+    "排名",
+    "旅客吞吐量"
+  ],
+  "eval_pipeline": {
+    "年月": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "排名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "地区": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "旅客吞吐量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "机场名": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n机场名可能会带上城市如成都天府，也可以算对"
+    }
+  }
+}

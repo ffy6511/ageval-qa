@@ -1,0 +1,41 @@
+format: ageval.dataset/1
+dataset_id: official/hle
+version: "0.1.0"
+description: >
+  Humanity's Last Exam simple-eval port. One question is one task. The solver
+  is one chat completion. The judge is one chat completion. PASS is the judge
+  token yes. This checkout has 573 text-only gold questions, not the gated
+  2,500-row parquet.
+tasks:
+  root: tasks
+defaults:
+  max_concurrent_tasks: 4
+provenance:
+  kind: port
+  upstream:
+    name: Humanity's Last Exam
+    url: https://github.com/centerforaisafety/hle
+    ref: main
+    commit: 22ed3074b1e7b134bcbc09028d0ba320839b0655
+    paper: https://arxiv.org/abs/2501.14249
+  parity:
+    claims:
+      - protocol
+      - scoring
+    known_gaps:
+      - "Checked-in tasks are not Hugging Face cais/hle revision 5a81a4c7271a2a2a312b9a690f0c2fde837e4c29. That parquet is gated. These 573 rows are the text-only gold slice of lmms-lab/HLE-Verified revision 45bc906a4796628c78c3cbef1579722afc359236, a CC-BY-4.0 reformat of skylenage/HLE-Verified snapshot becad9f339dfce27df0ebb38e55dabef12ca5735. Dropped rows: subset other than gold, has_image, answer_is_valid or problem_is_valid other than 1, and ids whose last op in hle-rolling-changes.txt at this commit is remove or update. Image bytes were already absent from that JSONL. scripts/generate_package.py --hf rewrites tasks/ from the gated parquet when HF_TOKEN can read it."
+      - "The port is hle_eval/run_model_predictions.py and run_judge_results.py: one Chat Completions call, then one judge call. It does not implement docs/evaluation-with-tools.md (web_search, web_fetch, a Python 3.11.16 sandbox, provider harnesses, or the blocklist)."
+      - "The checked-in judge is dashscope/qwen3.7-max. The official default is o3-mini-2025-01-31. The previous official default was gpt-4o-2024-08-06."
+      - "The official judge calls client.beta.chat.completions.parse with ExtractedAnswer, including strict true. openai-http chat does not send response_format. The prompt text is the official string. The parser accepts a JSON object or the labeled fields. correct must be one yes or no token, case-insensitive. Official aggregation is the case-sensitive test that the schema token contains yes. An empty judge body, a transport failure, and an unparseable verdict raise ERROR. Official extract_answer returns None and leaves the item unjudged, while dump_metrics still divides by the full question count."
+      - "Official JUDGE_PROMPT.format raises ValueError when the question, the answer, or the response contains a brace. This port substitutes the three placeholders and does not scan the inserted text."
+      - "The official prediction client timeout is 600 and the judge client timeout is 300, with max_retries 1. This job sets timeout and watchdog to those numbers. An omitted watchdog would still be the executor default of 180. This job does not retry. It does not send max_completion_tokens. The prediction script defaults that argument to None. The README recommends not setting it below 8192. The judge script passes 4096."
+      - "ageval openai-http chat sends temperature 0. The official call leaves temperature commented out, so the request omits it. The README says the evaluation defaults temperature to 0."
+      - "This job sends reasoning.effort minimal. Official prediction and judge requests do not send reasoning_effort."
+      - "openai-http returns the last 8000 characters of message.content. Official stores the full content string."
+      - "User content is the official list of parts: text, plus image_url when the row has an image string. Models whose name contains o1 put SYSTEM_PROMPT on a user turn in the official script. This port always sends that prompt as a system message."
+      - "A failed or empty solver call returns RunTerminal.failed and is not judged. Official writes no prediction. If that question is not rerun, the official accuracy denominator still includes it."
+      - "The task score is 1 when the judge says yes and 0 when it says no. Suite accuracy, the Wald interval, and calibration error are not task scores. scripts/calibration.py implements calib_err from run_judge_results.py, including the loop that skips the last bin. Official beta is 100. Fewer than beta rows raises IndexError, as the official script does."
+      - "The Harbor adapter answer override for 6713a4c60223609143188d32 is not applied. The answer string is the source row's answer."
+      - "This checkout's gold has no rationale text, rationale image, author name, or image bytes. The official judge does not read those fields. Every gold.json carries the dataset canary from the HLE README because the verified JSONL dropped the per-row canary."
+      - "defaults.max_concurrent_tasks is 4. The official prediction script defaults num_workers to 10 and asserts it is greater than 1. The judge script default is 100. The README example uses 100."
+      - "A written package is not an evidence-grade upgrade. Full acceptance was not run."

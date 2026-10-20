@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "annual",
+    "awardcategory",
+    "winningsong/album"
+  ],
+  "required": [
+    "annual",
+    "awardcategory",
+    "winningsong/album",
+    "performer(s)"
+  ],
+  "eval_pipeline": {
+    "performer(s)": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence.\n The answer to be evaluated is considered correct if it mentioned one of the main performancer(s), the featuring artist(s) may be omitted"
+    },
+    "annual": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "awardcategory": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "winningsong/album": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

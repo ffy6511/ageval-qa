@@ -1,0 +1,8 @@
+What are the world's busiest airports by passenger traffic? List the top ten busiest airports between 2020-2024 (including 2020 and 2024). I want to know about their rank, specific location (including city, district, road), total passengers (with precision to the person) and code(IATA/ICAO). 
+
+ Please organize the results in one Markdown table with the following column names in order: 
+Year, Airport, Rank, Location, Total Passengers, Code(IATA/ICAO) 
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

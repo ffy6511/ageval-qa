@@ -1,0 +1,46 @@
+{
+  "unique_columns": [
+    "school"
+  ],
+  "required": [
+    "school",
+    "yearfounded",
+    "public/private",
+    "totalstudents"
+  ],
+  "eval_pipeline": {
+    "school": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "yearfounded": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "public/private": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "totalstudents": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.1
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "电商平台",
+    "年份"
+  ],
+  "required": [
+    "电商平台",
+    "年份",
+    "618gmv",
+    "618成交破亿的品牌数量",
+    "双11gmv",
+    "双11成交破亿的品牌数量"
+  ],
+  "eval_pipeline": {
+    "电商平台": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "618gmv": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0001
+    },
+    "618成交破亿的品牌数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0001
+    },
+    "双11gmv": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0001
+    },
+    "双11成交破亿的品牌数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0001
+    }
+  }
+}

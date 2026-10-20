@@ -1,0 +1,3 @@
+想要看下最近的大模型表现，列举在gemini2.5 pro &lite & flash-lite(区分开thinking和不开thinking模式)、claude3.7及以后发布的模型（截止到2025年6月）、o3&o3mini&o4mini、doubao-1.5-thinking和1.6thinking、deepseek v3及以后发布的主要模型（以上所有模型截止到2025年6月） ，具体想了解的指标包括模型号（如gemini-2.5-pro）、上下文窗口（如32k）、aime-2025指标、swe verified指标(单次尝试)、tau-bench-retail和airline指标。请尽可能在对应模型官网上搜索所有指标，但不能编造，如过官网里没有发布，相关指标可以输出NA。请以一整个Markdown表格的格式输出整理后的数据，不要拆分成多个markdown表格，每个单元格都需要按列名要求输出，不得无故省略，输出采用中文。
+表格中的列名依次为：
+模型名称、公司、上下文窗口、AIME 2025、SWE-bench Verified、TAU-bench-Airline、Tau-bench-Retail。不要问我任何问题，只需输出结果，输出格式为```markdown{数据内容}```

@@ -1,0 +1,98 @@
+{
+  "unique_columns": [
+    "时间"
+  ],
+  "required": [
+    "时间",
+    "全国旅客总发送量/万人",
+    "全国旅客总发送量相比上年同期增长%",
+    "全国旅客总周转量/亿人公里",
+    "全国旅客总周转量相比上年同期增长%",
+    "全国货运总发送量/万吨",
+    "全国货运总发送量相比上年同期增长%",
+    "全国货运总周转量/亿吨公里",
+    "全国货运总周转量相比上年同期增长%"
+  ],
+  "eval_pipeline": {
+    "时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "全国旅客总发送量/万人": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国旅客总发送量相比上年同期增长%": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国旅客总周转量/亿人公里": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国旅客总周转量相比上年同期增长%": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国货运总发送量/万吨": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国货运总发送量相比上年同期增长%": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国货运总周转量/亿吨公里": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "全国货运总周转量相比上年同期增长%": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    }
+  }
+}

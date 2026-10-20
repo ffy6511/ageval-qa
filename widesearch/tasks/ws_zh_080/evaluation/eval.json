@@ -1,0 +1,78 @@
+{
+  "unique_columns": [
+    "企业名称"
+  ],
+  "required": [
+    "企业名称",
+    "全球门店数量",
+    "海外门店数量",
+    "北上广深门店数量",
+    "新一线门店数量",
+    "二线门店数量",
+    "三线及以下门店数量"
+  ],
+  "eval_pipeline": {
+    "全球门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "海外门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "北上广深门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "新一线门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "二线门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "三线及以下门店数量": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.0
+    },
+    "企业名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

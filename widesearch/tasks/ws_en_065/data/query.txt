@@ -1,0 +1,9 @@
+Curious about the birth rate, death rate, and the overall population of the United States. Please gather the following information on yearly basis from 2012-2023 (including 2012 and 2023). 
+
+Please organize the results in one Markdown table with the following columns:
+Year, Total Population(Million), Male Population(Million), Female Population(Million), Birth Rate, Death Rate
+Note: both birth rate and death rate indicate the number of live births/deaths occurring during the year, per 1,000 population. 
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

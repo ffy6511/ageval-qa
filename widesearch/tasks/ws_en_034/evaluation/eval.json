@@ -1,0 +1,58 @@
+{
+  "unique_columns": [
+    "month"
+  ],
+  "required": [
+    "month",
+    "housepriceinengland(pounds)",
+    "housepriceinwales(pounds)",
+    "housepriceinscotland(pounds)",
+    "housepriceinnorthernireland(pounds)"
+  ],
+  "eval_pipeline": {
+    "housepriceinengland(pounds)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "housepriceinwales(pounds)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "housepriceinscotland(pounds)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "housepriceinnorthernireland(pounds)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "month": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

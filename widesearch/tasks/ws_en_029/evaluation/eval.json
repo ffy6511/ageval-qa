@@ -1,0 +1,47 @@
+{
+  "unique_columns": [
+    "movie"
+  ],
+  "required": [
+    "movie",
+    "releasedate",
+    "usboxoffice(dollar)",
+    "worldwideboxoffice(dollar)"
+  ],
+  "eval_pipeline": {
+    "releasedate": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "movie": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "usboxoffice(dollar)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "worldwideboxoffice(dollar)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    }
+  }
+}

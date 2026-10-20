@@ -1,0 +1,20 @@
+Please compile a table listing the “CNN Hero of the Year” for every year the award was actually presented, from its first introduction through 2024 (including 2024), along with relevant details for each honoree.
+
+Please organize the results in one Markdown table with the following columns:
+Year of Award, Full Name, Gender, Date of Birth, Country of Birth,  University, Devoted Country, Background/Occupation, Major Contributions
+
+Notes:
+- Skip the year when no single CNN Hero of the Year is honored.
+- For any field where information is unavailable or not applicable, please enter "NA" in the corresponding cell.
+- Please write the date of birth in the format "Mon DD, yyyy" (e.g., Feb 01, 1994). If the specific day is missing, simply use "-, yyyy" (e.g., -, 1994).
+- You can use the following standard values for gender:
+• Male
+• Female
+• Non-binary
+- If the honoree did not attend college, write “NA” in the University column.
+- In the “Background/Occupation” column, specify the primary profession or social role, such as a nurse, teacher, or social entrepreneur.
+- In the “Major Contribution” column, briefly describe their main contributions to public welfare or society, for example providing education for children, aiding the homeless, or promoting environmental protection.
+- If you know the country where the individual engaged, you may note this in the “Devoted Country” column, for instance “China,” “United States,” or “India.”
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

@@ -1,0 +1,7 @@
+Could you provide a detailed list of Michelin three-star restaurants in Paris, France as of December 31, 2024? I especially want to know the name, main cuisine style and exact address of each restaurant.
+
+Please organize the results in one Markdown table with the following columns:
+Restaurant, Main Cuisine Style, Address
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

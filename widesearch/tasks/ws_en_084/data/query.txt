@@ -1,0 +1,8 @@
+Compile the campus shootings in the United States from 2010 to 2024 (including 2024). The information to be compiled includes the date of the incident (in the format of yyyy/mm/dd), the state where it occurred, the location (school), the name of the shooter, the identity of the shooter, the age of the shooter (at the time of the incident, if you can't find the exact number, output "Not Provided"), the outcome of the shooter, and the number of deaths( The statistics should include only shootings with a death toll greater than 0, excluding the death of the shooter).
+
+Please output the sorted data in the format of one Markdown table.
+Incident Date, State, Location (School), Shooter, Identity, Age of Shooter, Outcome, Death Toll
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

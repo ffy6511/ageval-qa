@@ -1,0 +1,24 @@
+format: ageval.task/1
+task_id: ws_en_021
+parameters:
+  instance_id: ws_en_021
+  language: en
+agent_profiles:
+  - id: lead
+  - id: researcher
+  - id: judge
+limits:
+  wall_time_seconds: 3600
+  evaluate_seconds: 1800
+  agent_invocations: 400
+  agent_concurrency: 4
+artifacts:
+  publishable:
+    - id: answer
+      path: artifacts/answer.json
+    - id: trace
+      path: artifacts/trace.json
+evaluation:
+  inputs:
+    - artifact: answer
+      target: artifacts/answer.json

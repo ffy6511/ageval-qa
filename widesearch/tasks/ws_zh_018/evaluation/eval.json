@@ -1,0 +1,58 @@
+{
+  "unique_columns": [
+    "医疗机构名称",
+    "准入技术"
+  ],
+  "required": [
+    "医疗机构名称",
+    "机构地址",
+    "医疗机构等级",
+    "联系电话",
+    "准入技术"
+  ],
+  "eval_pipeline": {
+    "医疗机构名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "准入技术": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "联系电话": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n当参考答案中医院电话有多个时，接受模型回答是参考答案的子集"
+    },
+    "机构地址": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "医疗机构等级": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+I want to buy a camera to take landscape photos. I heard that Nikon is good at taking landscapes and want to buy a mirrorless camera. Please help me collect the information of all Nikon Z series products as of the first half of 2025. The information I want to know is: effective pixels, weight, maximum frames per second, shutter speed range, highest number of focus points, digital image processor, ISO range, in-camera shock reduction technology.
+The weight specifically refers to the weight of the camera body itself, including the battery and memory card; The highest number of focus points refers to the higher value between single-point AF and auto-area AF.
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are: Camera Model, Effective Pixels, Weight, Maximum Frames per Second, Shutter Speed Range, Highest Number of Focus Points, Digital Image Processor, ISO Range, In-camera Vibration Reduction Technology.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is: 
+ ```markdown
+{data_content}
+```.

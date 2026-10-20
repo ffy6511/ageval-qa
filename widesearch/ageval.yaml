@@ -1,0 +1,32 @@
+format: ageval.dataset/1
+dataset_id: official/widesearch
+version: "0.1.0"
+description: >
+  WideSearch port. One original question is one task. The lead agent may
+  spawn sub-agents, at most four at a time, through bounded_gather.
+tasks:
+  root: tasks
+provenance:
+  kind: port
+  upstream:
+    name: WideSearch
+    url: https://github.com/ByteDance-Seed/WideSearch
+    ref: "9825ba7b140b71d81b364793f86dabe4cfed6749"
+    commit: "9825ba7b140b71d81b364793f86dabe4cfed6749"
+    paper: https://arxiv.org/abs/2508.07999
+  parity:
+    claims:
+      - protocol
+      - scoring
+    known_gaps:
+      - "Questions and gold tables are Hugging Face ByteDance-Seed/WideSearch revision 6531a7e5b497d44c8912407e0cb3dc95bd98cc09."
+      - "SEARCH_TOOL_API_URL uses the official GlobalSearch and TextBrowserView payloads and does not call the dataset summarizer. Otherwise search uses Serper when SERPER_API_KEY is set, and page reads use Jina Reader when JINA_API_KEY is set. With neither key, search falls back to DuckDuckGo HTML and pages are a plain HTTP fetch. A non-empty text_browser_view description is summarized by the summarizer role in profiles.yaml. A missing role or a failed summary returns the clipped page plus a summarizer_unavailable line. That call is HTTP from the tool process using the role's model id and locators; it does not open an Agent session and does not spend agent_invocations. The task process reads locator names from the ageval repo .env when the worker environment does not carry them. Serper returns one page and caps num at 100. Outbound calls share a process cap of 4 and back off on HTTP 429."
+      - "Judge calls use the judge profile. The checked-in job is dashscope/qwen3.7-max. Official default_eval_config names gpt-4.1-2025-04-14."
+      - "Official default_eval_config places temperature 0 beside generate_kwargs. llm_completion forwards only generate_kwargs, so the live eval request does not send temperature. ageval openai-http chat sends temperature 0."
+      - "This job sends reasoning.effort minimal. Official solver and eval configs do not send reasoning_effort."
+      - "Each model call uses timeout 300 and watchdog 300. The official runner has no per-request abort clock. An omitted ageval watchdog would still be the executor default of 180."
+      - "limits.agent_invocations is 400 for the Attempt. Official caps each agent at 50 steps plus one summary step. A wide fan-out can hit 400 first."
+      - "Judge transport failure, an empty judge body, and unparseable judge JSON raise ERROR. Official primary_key_preprocess returns an empty map, and llm_judge_column fills zeros."
+      - "A failed sub-agent does not drop later siblings. bounded_gather waits for every slot. Official ThreadPoolExecutor.map stops assigning results after the first worker exception."
+      - "Column metrics run serially. Official imports pandarallel at evaluator import. The metric functions are the same."
+      - "Tool observations returned by the fallback reader are clipped at 16000 characters."

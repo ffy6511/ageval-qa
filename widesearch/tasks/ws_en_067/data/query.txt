@@ -1,0 +1,9 @@
+Please gather data on girls’ single-sex high schools operating in Seoul as of December 2024. For each school, provide the following details: school name, year founded, public or private operation, and Total Students (2023/2024). For the number of students, give the number of students in 2024. If there is no updated information of 2024, it's sufficient to give the data from 2023 or 2022.
+
+Present the information in one Markdown table with the following column names:
+School, Year Founded, Public/Private, Total Students.
+If any data is unavailable, indicate NA.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

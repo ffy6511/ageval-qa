@@ -1,0 +1,59 @@
+format: ageval.profiles/1
+environment: local
+agent_profiles:
+  lead:
+    executor: openai-http
+    model:
+      id: dashscope/qwen3.7-max
+      api: chat
+      reasoning:
+        effort: minimal
+      timeout: 300
+      watchdog: 300
+    api_key: ${litellm_api_key}
+    base_url: ${litellm_base_url}
+    extensions:
+      - plugin: openai-http
+      - plugin: local
+  researcher:
+    executor: openai-http
+    model:
+      id: dashscope/qwen3.7-max
+      api: chat
+      reasoning:
+        effort: minimal
+      timeout: 300
+      watchdog: 300
+    api_key: ${litellm_api_key}
+    base_url: ${litellm_base_url}
+    extensions:
+      - plugin: openai-http
+      - plugin: local
+  judge:
+    executor: openai-http
+    model:
+      id: dashscope/qwen3.7-max
+      api: chat
+      reasoning:
+        effort: minimal
+      timeout: 300
+      watchdog: 300
+    api_key: ${litellm_judge_api_key}
+    base_url: ${litellm_base_url}
+    extensions:
+      - plugin: openai-http
+      - plugin: local
+  summarizer:
+    executor: openai-http
+    model:
+      id: dashscope/qwen3.7-max
+      api: chat
+      reasoning:
+        effort: minimal
+      timeout: 120
+      watchdog: 180
+    api_key: ${litellm_api_key}
+    base_url: ${litellm_base_url}
+    extensions:
+      - plugin: openai-http
+      - plugin: local

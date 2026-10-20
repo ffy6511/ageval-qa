@@ -1,0 +1,11 @@
+I would like to know the operating performance in 2024 of the companies granted casino concession contracts by the Macau government. Specifically, I am interested in each company's net gaming revenue and non-gaming revenue, both expressed in millions with one decimal place with HKD, and the currency clearly indicated. Additionally, for each company’s associated five-star deluxe hotels or resorts recognized by Macao Government Tourism Office (if applicable), I would like to know the number of rooms, occupancy rate, average daily rate (ADR), and revenue per available room (RevPAR). If some data is unavailable, the corresponding fields should be marked with "-".
+
+Please output the sorted data with each Luxury 5-Star Hotel/Resort hotel as a row in the format of one Markdown table. The column names in the table are as follows:
+
+Year, Gambling Enterprise, Net Gambling Revenue (in millions), Non-Gambling Revenue (in millions), 5-Star Deluxe Hotels/Resorts, Number of Rooms, Occupancy Rate, Average Room Rate, Revenue per Available Room
+
+Net Gambling Revenue (in millions), Non-Gambling Revenue (in millions), Average Room Rate, Revenue per Available Room are all in Hong Kong dollars. For conversions between Hong Kong dollars and US dollars, please use the given exchange rate: 1 US dollar = 7.85 Hong Kong dollars.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

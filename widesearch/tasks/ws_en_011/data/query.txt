@@ -1,0 +1,10 @@
+According to the J.D. Power Awards Best Car Ratings of 2025, please compile the information on the 2025 award winners for highest dependability in compact vehicles, including both the award types (Compact Car, Compact Premium Car, Compact Premium SUV, or Compact SUV) and the corresponding vehicle details.
+
+Please organize the results in one Markdown table with the following columns:
+Award Type, Vehicle Make, Year, Model, Major Trims, Body style, Fuel type(s), Drivetrain(s), Passengers, Doors, Overall Ratings 2025, Quality & Reliability Score 2025, Driving Experience Score 2025, Resale Value Score 2025.
+If the awarded model is categorized as a series (rather than a single specific model), please list all the major trims within that series, separated by commas.
+Separate multiple fuel types by comma.
+Only use Arabic numerals for the columns Year, Passengers, Doors, Overall Ratings 2025, Quality & Reliability Score 2025, Driving Experience Score 2025, Resale Value Score 2025.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

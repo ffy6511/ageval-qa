@@ -1,0 +1,38 @@
+{
+  "unique_columns": [
+    "辟谣/谣言内容"
+  ],
+  "required": [
+    "时间",
+    "辟谣/谣言内容",
+    "详情/真相"
+  ],
+  "eval_pipeline": {
+    "时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "辟谣/谣言内容": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "详情/真相": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

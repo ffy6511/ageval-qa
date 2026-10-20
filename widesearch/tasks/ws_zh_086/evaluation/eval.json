@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "歌手名字",
+    "演唱歌曲"
+  ],
+  "required": [
+    "节目名称",
+    "节目期数",
+    "歌手名字",
+    "演唱歌曲"
+  ],
+  "eval_pipeline": {
+    "节目名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "节目期数": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "歌手名字": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "演唱歌曲": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

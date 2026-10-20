@@ -1,0 +1,47 @@
+{
+  "unique_columns": [
+    "rank"
+  ],
+  "required": [
+    "rank",
+    "companyname",
+    "numberofmanagedunitsin2024",
+    "companyestablishmenttime"
+  ],
+  "eval_pipeline": {
+    "rank": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "companyestablishmenttime": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "numberofmanagedunitsin2024": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "companyname": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "It is sufficient if the semantics are approximately the same as the reference answer or if they point to the same entity. There is no need for a word-for-word correspondence."
+    }
+  }
+}

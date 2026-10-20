@@ -1,0 +1,10 @@
+It is said that "Mom Su" has saved AMD. Please help me sort out the specific processor (CPU) products released by AMD and their detailed information during the decade since Lisa Su became the CEO of AMD to 2023(include 2023). If individual information cannot be retrieved from the Internet, do not make up, just output "NA" in the corresponding cell. By the way, the core architechture of processor(CPU) should be Zen. And the core frequency uses the base clock.
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are: Time, Product Series, Processor Model, Core Architecture, Manufacturing Process (nm), Cores, Threads, Core Frequency (GHz), L2 Cache (MB), L3 Cache (MB), Graphics Model, Number of Graphics Cores.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is:
+```markdown
+{data_content}
+```.
+
+Everyone says "Su Ma" saved AMD. Please help me compile a list of specific processor (CPU) products AMD has released since Lisa Su became CEO and launched the "Zen" architecture until 2024 (inclusive). If you can't find any information online, don't try to guess; just enter "NA" in the corresponding cell.

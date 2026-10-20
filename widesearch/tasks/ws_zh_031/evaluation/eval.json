@@ -1,0 +1,47 @@
+{
+  "unique_columns": [
+    "奥运会名称",
+    "国家"
+  ],
+  "required": [
+    "奥运会名称",
+    "国家",
+    "金牌数量",
+    "夺冠项目"
+  ],
+  "eval_pipeline": {
+    "奥运会名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "国家": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "金牌数量": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "夺冠项目": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    }
+  }
+}

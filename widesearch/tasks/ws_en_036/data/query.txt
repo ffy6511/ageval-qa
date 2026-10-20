@@ -1,0 +1,12 @@
+I'm seeking permanent government job opportunities with the Department of Justice.
+Please check USAJOBS for any publicly available Attorney positions that list an open date between January 1st 2025 and June 25th 2025. Then, organize the information of position title, the hiring agency, position open date, position closing date, the duty location, and the salary range.
+
+Please output the organized data in the format of one Markdown table.
+The column names are as follows in sequence:
+Job Position, Hiring Agency, Open Date, Closing Date, Duty Location, Salary (Dollars), Control number
+If the salary or closing date is not publicly available, use “-”.  Separate multiple duty location by semicolon; if the locations are not specified, list it as "unknown".
+List the open date and closing date in the format dd/mm/yy.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

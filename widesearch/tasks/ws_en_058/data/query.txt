@@ -1,0 +1,7 @@
+Could you please give me a demographic brief analyzing the shifting racial composition of new U.S. citizens since 2002? This requires a year-by-year breakdown of their original birthplace composition from 2002 to 2022. Using U.S. Department of Homeland Security Yearbook of Immigration Statistics, the Annual Flow Reports, and archived USCIS Factsheets, compile the following metrics for each fiscal year from 2002 through 2022 (including 2022). If a statistic is unavailable, enter NA.
+
+Please output the results in one Markdown table with columns, in this exact order:
+Year | Total Naturalized | Born in Africa | Born in Asia | Born in Europe | Born in Caribbean | Born in Central America| Born in other North America | Born in Oceania | Born in South America
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

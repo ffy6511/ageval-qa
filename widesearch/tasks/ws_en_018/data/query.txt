@@ -1,0 +1,10 @@
+Need to analyze the trend of the U.S. federal government spending and deficit before and after the pandemic. Please provide me with the following data through fiscal years 2015-2024: the federal Budget (trillion), the federal spending (trillion), the federal deficit (trillion), the national debt (trillion), and the net interest cost on the gross federal debt (trillion).
+
+Please organize the results in one Markdown table with the following column names in order: 
+Fiscal Year, Federal Budget, Federal Spending, Federal Deficit, National Debt, Net Interest Cost.
+ 
+Under the Fiscal Year, state the statistics like FY2015, FY2016.
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

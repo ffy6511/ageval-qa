@@ -1,0 +1,6 @@
+I want to check the recent performance of large models. Please list Gemini 2.5 Pro & Lite & Flash-lite (separate the thinking and non-thinking models), Claude 3.7 and subsequently released models until June, 2025, O3 & O3 Mini & O4 Mini, Doubao-1.5-Thinking and 1.6-Thinking, DeepSeek V3 and subsequent main released models until June 2025. The specific metrics I want to know include the model number (such as Gemini-2.5-pro), context window (such as 32K), AIME-2025 metrics, SWE verified metrics (single attempt), and tau-bench-retail and airline metrics. Please try to search for all metrics on the official website of the corresponding model, but do not fabricate them. If the official website/official paper does not release them, the relevant metrics can be output as "NA".
+
+Please output the sorted data in the format of one Markdown table. The column names in the table are: model name, company, context window, AIME 2025, SWE-bench Verified, TAU-bench-Airline, Tau-bench-Retail.
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

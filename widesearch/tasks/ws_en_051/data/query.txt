@@ -1,0 +1,12 @@
+I’m interested in physics. Could you please provide a list of the Best 50 U.S. STEM High Schools 2024 according to 2024 U.S. News & World Report, including each school’s location (state), its STEM High Schools ranking, National Rankings position, State Rankings position, the grades it serves, and the total number of AP courses offered (as listed on NICHE) as reported for 2024? 
+Please output the organized data in one Markdown table format.
+The column names should be in order as follows:                                                                                                                                                                  
+High School, States, STEM High Schools ranking, National Rankings, State Rankings, Served Grades, AP Courses.
+Instructions:
+1. Use only Arabic numerals for all rankings.  
+2. Write out the full state name—no abbreviations are permitted.  
+3. If any information is missing, enter "NA."  
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

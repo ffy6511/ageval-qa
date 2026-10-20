@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "country",
+    "year"
+  ],
+  "required": [
+    "country",
+    "year",
+    "percapitahealthexpenditure(eur)",
+    "lifeexpectancy(years)",
+    "domesticgovernmenthealthexpenditure(%ofgdp)",
+    "out-of-pocketexpenditure(%ofcurrenthealthexpenditure)"
+  ],
+  "eval_pipeline": {
+    "country": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "year": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "percapitahealthexpenditure(eur)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "lifeexpectancy(years)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "domesticgovernmenthealthexpenditure(%ofgdp)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "out-of-pocketexpenditure(%ofcurrenthealthexpenditure)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    }
+  }
+}

@@ -1,0 +1,7 @@
+I would like to obtain information on the per capita health expenditure and life expectancy among residents of the five Nordic countries during the period 2020–2023 (including 2020 and 2023).
+
+ Please present the compiled data in one Markdown table. The column headers, in order, should be: Country, Year, Per Capita Health Expenditure (EUR), Life Expectancy (Years), Domestic government health expenditure (% of GDP), Out-of-pocket expenditure (% of current health expenditure). If any data point cannot be found, please indicate it as NA.
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

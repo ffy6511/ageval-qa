@@ -1,0 +1,20 @@
+I am preparing a policy brief on post-millennial commercial nuclear deployment and need a consolidated snapshot of every civil nuclear power reactor worldwide that entered commercial operation between 1 Jan 2008 and 31 Dec 2024.
+ To keep the sample coherent, please exclude: research or prototype reactors, small modular units ≤ 300 MW(e) net capacity, and reactors that were permanently shut down before reaching commercial service.
+ For each qualifying reactor, compile the following eight factual attributes—these data points are typically scattered across different industry reports (e.g., IAEA PRIS, WNA country profiles, corporate annual reports) and cannot all be gathered from a single page:
+1) Reactor Name (use the operator’s official English designation)  
+2)Country 
+3) Reactor Type (e.g., PWR, BWR, VVER-1200, APR-1400, etc.) 
+4) Net Electrical Capacity (MW) — Reference Unit Power
+5) Construction Start Year 
+6) First Grid Connection Date (YYYY-MM-DD)
+7) Commercial Operation Date (YYYY-MM-DD)  
+8) Current Status (Operational, Long-term-Outage, Permanent Shutdown as of 31 Dec 2024)
+If any data point cannot be located in publicly available sources, enter “NA”.
+If a nuclear plant has different units, output different units like Taishan-1, Taishan-2.
+
+Please deliver the results in one Markdown table with the columns in this exact order:
+Reactor Name |  Country | Reactor Type | Net Capacity (MW) | Construction Start Year | First Grid Connection Date | Commercial Operation Date| Current Status
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

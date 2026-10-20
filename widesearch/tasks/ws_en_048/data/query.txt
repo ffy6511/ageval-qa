@@ -1,0 +1,9 @@
+What's the correlation between police funds and violent-crime trends?  Using the 10 most populous U.S. cities from the 2020 Census, list each city’s FY 2024 police-department budget (USD bn, keep one digit). Include sworn police officer headcounts in 2024, the 2023 violent-crime rate (per 100k residents), the 2023 Homicides (per 100k residents) and the 2024 mayor and his/her party. If a city uses a calendar-year budget, treat the 2024 calendar budget as FY 2024. Fill missing values with NA.
+The crime rates and homicides should be rounded up to the nearest integer.
+
+Please output one Markdown table with the columns in this order:
+ City | FY 2024 Police Budget (USD bn) | Sworn Officers | 2023 Violent-Crime Rate | 2023 Homicides | 2024 Mayor | Party | Population (2020 Census)
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```.

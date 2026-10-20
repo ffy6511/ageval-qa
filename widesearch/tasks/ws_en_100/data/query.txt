@@ -1,0 +1,11 @@
+Help me to compile a complete list of U.S. Supreme Court justices who were successfully confirmed from President Richard Nixon’s first term through President Joe Biden’s term. For each justice, record:
+Name, Position (Chief Justice or Associate Justice), Tenure Start Date(in the format as YYYY-MM-DD), Tenure End Date (enter “NA” for currently serving justices as of the end of 2024), Nominating President, President’s Party Affiliation, Ideological Leaning (Conservative or Liberal), Most Recent Prior Position
+
+Please output the organized data in Markdown table format.
+The column names in the table should be, in order:
+Name | Position | Tenure Start Date | Tenure End Date | Nominating President | President’s Party | Ideological Leaning | Previous Position
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is: 
+ ```markdown
+{data_content}
+```.

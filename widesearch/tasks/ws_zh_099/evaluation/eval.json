@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "景区名称"
+  ],
+  "required": [
+    "景区名称",
+    "所在城市",
+    "旺季成人全价门票价格",
+    "是否属于世界文化和自然遗产"
+  ],
+  "eval_pipeline": {
+    "所在城市": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "旺季成人全价门票价格": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。\n只答出标准答案中的子集可算对"
+    },
+    "是否属于世界文化和自然遗产": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "景区名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

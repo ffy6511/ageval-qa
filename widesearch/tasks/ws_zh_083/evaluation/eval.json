@@ -1,0 +1,48 @@
+{
+  "unique_columns": [
+    "景区名称"
+  ],
+  "required": [
+    "景区名称",
+    "所在城市",
+    "旺季景区票价(元/人)",
+    "旺季开放时间"
+  ],
+  "eval_pipeline": {
+    "旺季景区票价(元/人)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "所在城市": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "旺季开放时间": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "llm_judge"
+      ],
+      "criterion": "和参考答案语义相同大致、或者指向的实体一致即可，不需要字字对应。"
+    },
+    "景区名称": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

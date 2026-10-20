@@ -1,0 +1,16 @@
+Please help me compile the founding year, governing authority, official website addresses of all Russell Group universities in the UK, as well as their rankings in the 2025 Guardian University Guide and the 2026 QS World University Rankings.
+
+Please output the compiled data in the format of one Markdown table.
+The column names in the table are as follows in sequence: University, Founding Year, Governing Body, Official Website Address, 2025 UK Guardian Rankings, 2026 QS World Rankings.
+
+Among them:
+The full name of the university should be written, for example: University of Cambridge;
+"Founding Year" refers to the official date on which the institution was recognized as a university—most commonly the year it received its Royal Charter or parliamentary approval.
+The full name of the governing authority should be written, for example: University Council; if there are multiple governing authorities, please separate them with commas;
+The official website address should be complete, for example: https://www.ox.ac.uk/
+The rankings in the lists should be in Arabic numerals, for example: 11.
+
+
+Don't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is ```markdown
+{data_content}
+```

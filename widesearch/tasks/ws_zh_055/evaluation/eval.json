@@ -1,0 +1,68 @@
+{
+  "unique_columns": [
+    "年份",
+    "教育阶段"
+  ],
+  "required": [
+    "年份",
+    "教育阶段",
+    "院校数量(万所)",
+    "专任教师数量(万人)",
+    "招生数量(万人)",
+    "毕业生数量(万人)"
+  ],
+  "eval_pipeline": {
+    "院校数量(万所)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "专任教师数量(万人)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "招生数量(万人)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "毕业生数量(万人)": {
+      "preprocess": [
+        "extract_number"
+      ],
+      "metric": [
+        "number_near"
+      ],
+      "criterion": 0.05
+    },
+    "年份": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    },
+    "教育阶段": {
+      "preprocess": [
+        "norm_str"
+      ],
+      "metric": [
+        "exact_match"
+      ]
+    }
+  }
+}

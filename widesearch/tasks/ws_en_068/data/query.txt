@@ -1,0 +1,10 @@
+Please provide a table of the books on the "Ten Best Books List" of The New York Times for the years 2022, 2023, and 2024. The table should include five items: year, book title, author (if there are multiple authors, separate them with commas, but don't include translators or narrators), first publisher (if there is a specific imprint under the publisher, please specify it), and first publication time  in English (in the format of yyyy-mm-dd, for example, 2024-01-01; if there is no specific date, yyyy-mm is also acceptable). 
+
+Please output the organized data in the format of one Markdown table and only record the information for the English edition of these books.
+The column names in the table are as follows, in sequence:
+Year, Book Title, Author, First Publisher, First Publication Time
+
+Don't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is 
+```markdown
+{data_content}
+```.
